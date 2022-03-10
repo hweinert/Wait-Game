@@ -1,0 +1,3 @@
+1. Man installiere Java.
+2. Man öffne im exe-Ordner eine Kommandozeile, z. B. Powershell oder CMD.exe
+3. java -jar jarfile.jar
