@@ -1,0 +1,2 @@
+TODOS
+- Attribut für Item Slots, Attribut für Item-Glück
