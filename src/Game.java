@@ -132,12 +132,8 @@ public class Game {
 					System.out.println(Tools.makeBorder("You can't improve this attribute further."));
 				}
 			} else if (input.equalsIgnoreCase("F")) {
-				if (player.getMuscularity() < 10) {
-					purchaseSuccessful = attrImprover.imprMuscularityWithAttributePoints();
-					player.getItemManager().increaseSlotLimit(1);
-				} else {
-					System.out.println(Tools.makeBorder("You can't improve this attribute further."));
-				}
+				purchaseSuccessful = attrImprover.imprMuscularityWithAttributePoints();
+				player.getItemManager().increaseSlotLimit(1);
 			}
 			
 			// for test purposes
@@ -166,20 +162,20 @@ public class Game {
 					purchaseSuccessful = attrImprover.imprPatienceWithGold();
 				} else {
 					System.out.println(Tools.makeBorder("You can't improve this attribute further."));
+					// its actually not, but output for that case should not appear. the above message is good enough.
+					purchaseSuccessful = true;
 				}
 			} else if (input.equals("5")) {
 				if (player.getLookiness() < 50) {
 					purchaseSuccessful = attrImprover.imprLookinessWithGold();
 				} else {
 					System.out.println(Tools.makeBorder("You can't improve this attribute further."));
+					// its actually not, but output for that case should not appear. the above message is good enough.
+					purchaseSuccessful = true;
 				}
 			} else if (input.equals("6")) {
-				if (player.getMuscularity() < 10) {
-					purchaseSuccessful = attrImprover.imprMuscularityWithGold();
-					player.getItemManager().increaseSlotLimit(1);
-				} else {
-					System.out.println(Tools.makeBorder("You can't improve this attribute further."));
-				}
+				purchaseSuccessful = attrImprover.imprMuscularityWithGold();
+				player.getItemManager().increaseSlotLimit(1);
 			}
 			
 			

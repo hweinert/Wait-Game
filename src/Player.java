@@ -5,7 +5,7 @@ public class Player implements Serializable {
 	private static final long serialVersionUID = -5405016952686912472L;
 	private int level;
 	private int experience;
-	private int gold;
+	private long gold;
 	private int attributePoints;
 
 	// skills
@@ -19,7 +19,7 @@ public class Player implements Serializable {
 	private AttributeImprover attrImprover;
 	private ItemManager itemManager;
 
-	private Player(int level, int experience, int gold, int attributePoints, int intelligence, int dexterity, 
+	private Player(int level, int experience, long gold, int attributePoints, int intelligence, int dexterity, 
 			       int endurance, int patience, int lookiness, int muscularity) {
 		this.level = level;
 		this.experience = experience;
@@ -59,7 +59,7 @@ public class Player implements Serializable {
 		return attributePoints;
 	}
 	
-	public int getGold() {
+	public long getGold() {
 		return gold;
 	}
 	
@@ -136,6 +136,11 @@ public class Player implements Serializable {
 				+ itemManager.calcTotalMaxExpBonus();
 		int min = (int) Math.round(minDouble);
 		int max = (int) Math.round(maxDouble);
+		
+		if (min >= max) {
+			max = min + 1;
+		}
+		
 		return new int[] {min, max};
 	}
 	
@@ -146,6 +151,11 @@ public class Player implements Serializable {
 				+ itemManager.calcTotalMaxGoldBonus();
 		int min = (int) Math.round(minDouble);
 		int max = (int) Math.round(maxDouble);
+		
+		if (min >= max) {
+			max = min + 1;
+		}
+		
 		return new int[] {min, max};
 	}
 
